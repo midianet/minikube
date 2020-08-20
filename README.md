@@ -39,9 +39,12 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 kubectl version --client
 ```
+### Siege
+```
+sudo apt install siege
+```
+
 ### VsCode
 ```
-sudo apt-get install code
+sudo apt install code
 ```
-
-
