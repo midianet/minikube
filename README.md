@@ -78,6 +78,8 @@ kubectl get pods
 kubectl delete -f # [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
 kubectl get pods
 
+minikube service [servico] --url
+
 minikube addons list
 minikube addons enable metrics-server
 minikube addons enable dashboard 
@@ -92,28 +94,13 @@ kubectl apply -f  # [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
 kubectl get services  #observe agora e LoadBalancer
 
 minikube ip
-docker inspect [docker] | grep IP
 
 sudo vi /etc/hosts
- # 172.17.0.2 poc.br
- # 172.17.0.2 teste.br
+ # [ip] poc.br
+ # [ip] teste.br
 
 #acessar o site
 
 kubectl set image deployment.v1.apps/poc poc=midianet/kube:1.1.0
 
-
 ```
-
-
-
-
-
-
-
-kubectl get ingress
-
-
-
-
-
