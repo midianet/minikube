@@ -56,3 +56,64 @@ sudo apt install siege
 ```
 sudo apt install code
 ```
+
+
+### comandos 
+```
+mkdir poc
+# criar arquivos
+#......
+
+kubectl get pods
+kubectl get services  #observe o type
+kubectl create -f  # [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
+kubectl get pods
+
+#Editar o arquivo poc.yaml e trocar o número de replicas para 5
+
+kubectl apply -f  # [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
+kubectl apply -f  # DE NOVO!!!! [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
+kubectl get pods
+
+kubectl delete -f # [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
+kubectl get pods
+
+minikube addons list
+minikube addons enable metrics-server
+minikube addons enable dashboard 
+minikube addons enable registry
+minikube addons enable ingress
+minikube addons list
+
+#criar arquivo ingress
+#alterar o type do service para LoadBalancer
+
+kubectl apply -f  # [pasta] ou [arquivo] (se pasta applica tudo que tem dentro)
+kubectl get services  #observe agora e LoadBalancer
+
+minikube ip
+docker inspect [docker] | grep IP
+
+sudo vi /etc/hosts
+ # 172.17.0.2 poc.br
+ # 172.17.0.2 teste.br
+
+#acessar o site
+
+kubectl set image deployment.v1.apps/poc poc=midianet/kube:1.1.0
+
+
+```
+
+
+
+
+
+
+
+kubectl get ingress
+
+
+
+
+
