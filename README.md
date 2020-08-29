@@ -15,8 +15,16 @@ sudo apt install docker-ce docker-ce-cli containerd.io
 - *opção2*
 ```
 sudo curl https://releases.rancher.com/install-docker/18.09.sh | sh
+```
+```
 sudo usermod -aG docker $USER
 ```
+- *Teste*
+```
+docker ps
+docker run hello-world
+```
+
 ### Minikube
 ```
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
