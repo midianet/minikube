@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: poc
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: poc
   ports:
