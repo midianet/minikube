@@ -109,4 +109,8 @@ kubectl autoscale deployment poc --cpu-percent=20 --min=1 --max=20
 
 kubectl get hpa
 
+siege -c 15 -t 60s -v  http://poc.br
+
+watch kubectl get hpa
+
 ```
