@@ -103,4 +103,10 @@ sudo vi /etc/hosts
 
 kubectl set image deployment.v1.apps/poc poc=midianet/kube:1.1.0
 
+### Auto Scale 
+
+kubectl autoscale deployment poc --cpu-percent=20 --min=1 --max=20
+
+kubectl get hpa
+
 ```
