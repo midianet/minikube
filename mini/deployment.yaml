@@ -13,7 +13,7 @@ spec:
         app: mini
     spec:
       containers:
-      - name: poc
+      - name: mini
         image: midianet/mini:1.0.0
         resources:
           limits:
