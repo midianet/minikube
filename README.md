@@ -114,14 +114,6 @@ minikube dashboard
 #### Acessar o endereço informado pelo dashboard
 
 
-## Ingress
-```
-cd kube
-#criar arquivo kube-ingress.yaml como no repositório
-cd ..
-kubectl apply -f kube
-kubectl get ingress
-```
 
 ## Ip do minikube
 ```
@@ -134,6 +126,16 @@ sudo vi /etc/hosts
 ```
  *ip do minikube kube.local*
  *ip do minikube mini.local*
+
+
+## Ingress
+```
+cd kube
+#criar arquivo kube-ingress.yaml como no repositório
+cd ..
+kubectl apply -f kube
+kubectl get ingress
+```
 
 
 ## Acessando a Aplicação pelo dns
