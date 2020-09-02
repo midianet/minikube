@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mini
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mini
+  template:
+    metadata:
+      labels:
+        app: mini
+    spec:
+      containers:
+      - name: poc
+        image: midianet/mini:1.0.0
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
