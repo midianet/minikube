@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: poc
+  name: kube
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: poc
+      app: kube
   template:
     metadata:
       labels:
-        app: poc
+        app: kube
     spec:
       containers:
       - name: poc
