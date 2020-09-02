@@ -13,7 +13,7 @@ spec:
         app: kube
     spec:
       containers:
-      - name: poc
+      - name: kube
         image: midianet/kube:1.0.0
         resources:
           limits:
