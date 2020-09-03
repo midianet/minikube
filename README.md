@@ -88,7 +88,6 @@ minikube service kube --url
 minikube addons list
 minikube addons enable metrics-server
 minikube addons enable dashboard
-minikube addons enable registry
 minikube addons enable ingress
 minikube addons list
 ```
