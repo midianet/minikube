@@ -50,19 +50,13 @@ sudo apt install siege
 siege
 ```
 
-### VsCode
-```
-sudo apt install code
-```
-##### Abrindo o code para instalar o plugin do kubernetes e editar os arquivos
-
 ## Criando o Deploy/Service da App Kube
 ```
 cd ~
 mkdir kube
 cd kube
-# criar o arquivo kube.yaml como no repositório
-# criar o arquivo kube-service.yaml como no repositório
+# criar o arquivo deployment.yaml como no repositorio kube/deployment.yaml
+# criar o arquivo service.yaml como no repositoriot kube-service.yaml
 cd ..
 kubectl create -f kube  #[pasta] ou [arquivo] (se pasta applica todos os arquivos de uma so vez)
 kubectl apply -f kube  #de novo????
@@ -126,7 +120,7 @@ sudo vi /etc/hosts
 ```
  *ip do minikube kube.local*
  *ip do minikube mini.local*
-
+ 
 
 ## Ingress
 ```
@@ -150,17 +144,17 @@ kubectl set image deployment.v1.apps/kube kube=midianet/kube:2.0.0
 *Acessar o endereço http://kube.local*
 
 
-## Criando o Deploy/Service/Ingress
+## Criando um Deploy/Service/Ingress por comando
+
 ```
+kubectl create deployment mini --image=gcr.io/google-samples/hello-app:1.0
+kubectl expose deployment mini --type=NodePort --port=8080
+kubectl get service mini
 mkdir mini
 cd mini
-# criar o arquivo mini.yaml como no repositório
-# criar o arquivo mini-service.yaml como no repositório
-# criar o arquivo mini-ingress.yaml como no repositório
+# criar o arquivo ingress.yaml como no repositório mini/ingress.yaml
 cd ..
 kubectl apply -f mini
-kubectl get pods
-kubectl get services
 kubectl get ingress
 ```
 *Observar no dashboard*
