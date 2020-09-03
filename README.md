@@ -65,6 +65,7 @@ cd kube
 # criar o arquivo kube-service.yaml como no repositório
 cd ..
 kubectl create -f kube  #[pasta] ou [arquivo] (se pasta applica todos os arquivos de uma so vez)
+kubectl apply -f kube  #de novo????
 ```
 
 ### Verificando o Deploy/Service
@@ -75,10 +76,9 @@ kubectl get services
 
 ### Alterando uma configuração existente
 
-#### Editar o arquivo kube.yaml e trocar o número de replicas para 3
+#### Adicionando/Removendo Réplicas
 ```
-kubectl apply -f kube
-kubectl apply -f kube # Mas de novo???????
+kubectl scale deployments/kube --replicas=5
 kubectl get pods
 ```
 
@@ -87,6 +87,7 @@ kubectl get pods
 kubectl delete -f kube
 kubectl get pods
 kubectl get service
+kubectl apply -f kube  #aplicando de novo o deploy/service
 ```
 
 ## Descobrindo o endereço interno de um Service
@@ -112,7 +113,6 @@ minikube addons list
 minikube dashboard
 ```
 #### Acessar o endereço informado pelo dashboard
-
 
 
 ## Ip do minikube
