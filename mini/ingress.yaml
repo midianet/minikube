@@ -13,3 +13,4 @@ spec:
         backend:
           serviceName: mini
           servicePort: 8080
+
