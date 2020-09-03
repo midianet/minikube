@@ -14,6 +14,12 @@ sudo usermod -aG docker $USER
 ```
 ##### Testando instalção
 ```
+Namespace
+default
+Created
+Aug 29, 2020
+Age
+4 days ago
 docker ps
 ```
 
@@ -115,7 +121,7 @@ sudo vi /etc/hosts
 ## Ingress
 ```
 cd kube
-#criar arquivo kube-ingress.yaml como no repositório
+#criar arquivo ingress.yaml como no repositório
 cd ..
 kubectl apply -f kube
 kubectl get ingress
