@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kube
-        image: midianet/kube:2.0.0
+        image: midianet/kube:1.0.0
         resources:
           limits:
             memory: "512Mi"
