@@ -73,7 +73,6 @@ kubectl get services
 kubectl delete -f kube
 kubectl get pods
 kubectl get service
-kubectl apply -f kube  #aplicando de novo o deploy/service
 ```
 
 ## Descobrindo o endereço interno de um Service
@@ -124,7 +123,7 @@ kubectl get ingress
 ```
 
 
-## Acessando a Aplicação pelo dns
+## Acessando a Aplicação pelo dnskubectl apply -f kube  #aplicando de novo o deploy/service
 Acessar o endereço http://kube.local
 
 
