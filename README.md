@@ -160,9 +160,9 @@ kubectl get pods
 
 # Auto Scale 
 ```
-kubectl autoscale deployment kube --cpu-percent=20 --min=1 --max=20
+kubectl autoscale deployment kube --cpu-percent=20 --min=1 --max=10
 kubectl get hpa
-siege -c 10 -t 60s -v  http://kube.local
+siege -c 20 -t 30s -v  http://kube.local
 watch kubectl get hpa
 ```
 
