@@ -68,14 +68,6 @@ kubectl get pods
 kubectl get services
 ```
 
-### Alterando uma configuração existente
-
-#### Adicionando/Removendo Réplicas
-```
-kubectl scale deployments/kube --replicas=5
-kubectl get pods
-```
-
 ## Removendo o Deploy/Service
 ```
 kubectl delete -f kube
@@ -160,6 +152,11 @@ kubectl get ingress
 *Observar no dashboard*
 *Acessar o endereço http://mini.local*
 
+#### Adicionando/Removendo Réplicas
+```
+kubectl scale deployments/mini --replicas=5
+kubectl get pods
+```
 
 # Auto Scale 
 ```
