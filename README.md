@@ -14,12 +14,6 @@ sudo usermod -aG docker $USER
 ```
 ##### Testando instalção
 ```
-Namespace
-default
-Created
-Aug 29, 2020
-Age
-4 days ago
 docker ps
 ```
 
