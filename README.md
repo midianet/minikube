@@ -1,6 +1,6 @@
 # Tutorial Minikube
 
-## Instalações
+## Instalações Ubuntu 18/20 Mint
 
 ### Docker
 
