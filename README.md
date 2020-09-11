@@ -80,6 +80,7 @@ kubectl get service
 
 ## Descobrindo o endereço interno de um Service
 ```
+kubectl apply -f kube
 minikube service kube --url
 ```
 #### Acessando a Aplicação pelo endereço interno informado
@@ -124,8 +125,7 @@ kubectl apply -f kube
 kubectl get ingress
 ```
 
-
-## Acessando a Aplicação pelo dnskubectl apply -f kube  #aplicando de novo o deploy/service
+## Acessando a Aplicação pelo dns 
 Acessar o endereço http://kube.local
 
 
