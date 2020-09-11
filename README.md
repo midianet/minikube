@@ -69,6 +69,7 @@ kubectl apply -f kube  #de novo????
 ```
 kubectl get pods
 kubectl get services
+kubectl get pod,svc
 ```
 
 ## Removendo o Deploy/Service
