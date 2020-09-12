@@ -20,9 +20,11 @@ sudo reboot now
 docker ps
 ```
 
+
 ### Minikube
+!Verificar se o minikube esta rodando
 ```
-minikube start
+
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
 chmod +x minikube
 sudo mkdir -p /usr/local/bin/
@@ -132,6 +134,7 @@ Acessar o endereço http://kube.local
 
 
 ## Rolling Update (Atualizando a vesão)
+!Aumentar o numero de replicas para ver o update melhor.
 ```
 kubectl set image deployment.v1.apps/kube kube=midianet/kube:2.0.0
 ```
