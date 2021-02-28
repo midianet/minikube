@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mini
@@ -6,11 +6,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
-  - host: mini.local
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: mini
-          servicePort: 8080
-
+    - host: mini.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mini
+                port:
+                  number: 8080
