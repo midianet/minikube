@@ -164,6 +164,59 @@ kubectl scale deployments/mini --replicas=5
 kubectl get pods
 ```
 
+# Postgres
+
+## Criando uma Secret
+
+```
+cd ..
+mkdkir postgres
+cd postgres
+# criar o arquivo secret.yaml como no repositório postgres/secret.yaml
+kubectl apply -f secret.yaml
+kubectl get secrets
+```
+
+## Criando uma PVC Persistent Volume Claim
+
+```
+# criar o arquivo secret.yaml como no repositório postgres/secret.yaml
+kubectl apply -f volume.yaml
+kubectl get pv
+```
+
+## Deploy do Postgres
+
+```
+# criar o arquivo deployment.yaml como no repositório postgres/deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl get pods
+(observe o uso do secret e do volume por esse deployment)
+```
+
+## Deploy Api usando secret conectada no postgres
+
+```
+cd ..
+mkdir api
+cd api
+# criar o arquivo deployment.yaml como no repositório postgres/deployment.yaml
+kubectl apply -f api.yaml
+kubectl get pods
+(observe o uso do secret por esse deployment)
+```
+
+# Replicas
+
+*Observar no dashboard*
+*Acessar o endereço http://mini.local*
+
+#### Adicionando/Removendo Réplicas
+```
+kubectl scale deployments/mini --replicas=5
+kubectl get pods
+```
+
 # Auto Scale 
 ```
 kubectl autoscale deployment kube --cpu-percent=20 --min=1 --max=10
