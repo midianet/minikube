@@ -1,0 +1,36 @@
+	apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.6
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+#            value: wordpress-2020          
+            valueFrom:
+              secretKeyRef:
+                name: mysql
+                key: password
+        volumeMounts:
+          - name: mysql-volume
+            mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-volume
+          persistentVolumeClaim:
+            claimName: mysql
