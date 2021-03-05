@@ -116,10 +116,11 @@ minikube ip
 ```
 sudo vi /etc/hosts
 ```
+ #Editar o arquivo adicionando as linhas como abaixo subsstituindo na frente o ip do minikube 
  *ip do minikube kube.local*
  *ip do minikube mini.local*
+ *ip do minikube wordpress.local*
  
-
 ## Ingress
 ```
 cd kube
@@ -140,7 +141,6 @@ kubectl set image deployment.v1.apps/kube kube=midianet/kube:2.0.0
 ```
 *Observar a versão do pod no dashboard*
 *Acessar o endereço http://kube.local*
-
 
 ## Criando um Deploy/Service/Ingress por comando
 
@@ -164,49 +164,83 @@ kubectl scale deployments/mini --replicas=5
 kubectl get pods
 ```
 
-# Postgres
+# MYSQL
 
 ## Criando uma Secret
 
 ```
 cd ..
-mkdkir postgres
-cd postgres
-# criar o arquivo secret.yaml como no repositório postgres/secret.yaml
+mkdkir mysql
+cd mysql
+# criar o arquivo secret.yaml como no repositório mysql/secret.yaml
 kubectl apply -f secret.yaml
 kubectl get secrets
 ```
 
-## Criando uma PVC Persistent Volume Claim
+## Criando uma PVC Persistent Volume Claim para o mysql
 
 ```
-# criar o arquivo secret.yaml como no repositório postgres/secret.yaml
+# criar o arquivo volume.yaml como no repositório mysql/volume.yaml
 kubectl apply -f volume.yaml
 kubectl get pv
 ```
 
-## Deploy do Postgres
+## Deploy do Mysql
 
 ```
-# criar o arquivo deployment.yaml como no repositório postgres/deployment.yaml
+# criar o arquivo deployment.yaml como no repositório mysql/deployment.yaml
 kubectl apply -f deployment.yaml
 kubectl get pods
 (observe o uso do secret e do volume por esse deployment)
 ```
 
-## Deploy Api usando secret conectada no postgres
+## Service do Mysql
+
+```
+# criar o arquivo service.yaml como no repositório mysql/service.yaml
+kubectl apply -f service.yaml
+kubectl get svc	
+```
+
+# Wordpress
+
+## Criando uma PVC Persistent Volume Claim para o wordpress
 
 ```
 cd ..
-mkdir api
-cd api
-# criar o arquivo deployment.yaml como no repositório postgres/deployment.yaml
-kubectl apply -f api.yaml
-kubectl get pods
-(observe o uso do secret por esse deployment)
+mkdir wordpress
+cd wordpress
+# criar o arquivo volume.yaml como no repositório wordpress/volume.yaml
+kubectl apply -f volume.yaml
+kubectl get pv
 ```
 
-# Replicas
+## Deploy do Wordpress
+
+```
+# criar o arquivo deployment.yaml como no repositório wordpress/deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl get pods
+(observe o uso do secret e do volume por esse deployment)
+```
+
+## Service do Wordpress
+
+```
+# criar o arquivo service.yaml como no repositório wordpress/service.yaml
+kubectl apply -f service.yaml
+kubectl get svc	
+```
+
+## Ingress do Wordpress
+
+```
+# criar o arquivo ingress.yaml como no repositório wordpress/ingress.yaml
+kubectl apply -f ingress.yaml
+kubectl get ingress		
+```
+
+# Load Balance
 
 *Observar no dashboard*
 *Acessar o endereço http://mini.local*
@@ -215,6 +249,8 @@ kubectl get pods
 ```
 kubectl scale deployments/mini --replicas=5
 kubectl get pods
+
+# observe que cada requisição ele apresenta um host diferente
 ```
 
 # Auto Scale 
