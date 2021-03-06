@@ -4,6 +4,8 @@
 
 ### Docker
 
+## nao rode como root
+
 ```
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
