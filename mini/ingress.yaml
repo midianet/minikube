@@ -16,3 +16,4 @@ spec:
                 name: mini
                 port:
                   number: 8080
+
