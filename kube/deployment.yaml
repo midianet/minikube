@@ -16,6 +16,9 @@ spec:
       - name: kube
         image: midianet/kube:1.0.0
         resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
           limits:
             memory: "512Mi"
             cpu: "500m"
